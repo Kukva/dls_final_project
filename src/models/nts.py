@@ -63,11 +63,13 @@ class NeuralStyleTransfer:
     def get_input_optimizer(self, input_img):
         return optim.LBFGS([input_img.requires_grad_(True)])
 
-    def run_style_transfer(self, content_img, style_img, input_img, num_steps=100, style_weight=1e6, content_weight=1, save_steps=False):
+    def run_style_transfer(self, content_img, style_img, input_img, num_steps=100, style_weight=1e6, content_weight=1, save_steps=True):
         model, style_losses, content_losses = self.get_style_model_and_losses(style_img, content_img)
         model.eval()
 
         optimizer = self.get_input_optimizer(input_img)
+        intermediate_images = []
+        intermediate_images.append(input_img.clone().cpu().squeeze(0))
 
         run = [0]
         while run[0] <= num_steps:
@@ -92,13 +94,13 @@ class NeuralStyleTransfer:
 
             optimizer.step(closure)
 
-            # if save_steps and run[0] % 50 == 0:
-            #     with torch.no_grad():
-            #         img = input_img.clone().cpu().squeeze(0)
-            #         img = transforms.ToPILImage()(img)
-            #         intermediate_images.append(img)
+            if save_steps and run[0] % 5 == 0:
+                with torch.no_grad():
+                    img = input_img.clone().cpu().squeeze(0)
+                    img = transforms.ToPILImage()(img)
+                    intermediate_images.append(img)
 
         with torch.no_grad():
             input_img.clamp_(0, 1)
 
-        return input_img
+        return input_img, intermediate_images
