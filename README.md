@@ -32,8 +32,8 @@ Yandex Disk - https://disk.yandex.ru/i/t8QUQHH7tzRmwA
 ## Примеры
 ![](src/images/demo/image_1.png)
 ![](src/images/demo/image_2.png)
-![](src/images/demo/image_3.png)
-![](src/images/demo/image_4.png)
+![](src/images/demo/image_3.PNG)
+![](src/images/demo/image_4.PNG)
 
 
 
