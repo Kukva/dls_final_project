@@ -15,7 +15,7 @@ from typing import Dict
 # from dotenv import load_dotenv
 
 # Инициализация бота и модели
-TOKEN = os.getenv('BOT_TOKEN')
+TOKEN = '7898819934:AAFmy8Cp2vpXL00A5xqr3y0FhN1GKwIY3Tw'
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
 style_transfer_model = NeuralStyleTransfer()
@@ -52,8 +52,8 @@ async def transfer_style(message: Message):
 
     content_path = user_images[chat_id]["content"]
     style_path = user_images[chat_id]["style"]
-    output_path = f"images/{chat_id}_output.jpg"
-    gif_output_path = f"images/{chat_id}_output.gif"
+    output_path = f"images/result/{chat_id}_output.jpg"
+    gif_output_path = f"images/result/{chat_id}_output.gif"
 
     content_img = image_loader(content_path)
     style_img = image_loader(style_path)

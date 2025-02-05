@@ -69,7 +69,9 @@ class NeuralStyleTransfer:
 
         optimizer = self.get_input_optimizer(input_img)
         intermediate_images = []
-        intermediate_images.append(input_img.clone().cpu().squeeze(0))
+        img = input_img.clone().cpu().squeeze(0)
+        img = transforms.ToPILImage()(img)
+        intermediate_images.append(img)
 
         run = [0]
         while run[0] <= num_steps:

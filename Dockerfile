@@ -10,6 +10,7 @@ COPY . .
 # Установим зависимости
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Перейдем в рабочую директорию
 WORKDIR /app/src
 
 # Указываем команду для запуска бота
