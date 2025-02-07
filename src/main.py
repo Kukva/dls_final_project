@@ -15,7 +15,7 @@ from typing import Dict
 # from dotenv import load_dotenv
 
 # Инициализация бота и модели
-TOKEN = '7898819934:AAFmy8Cp2vpXL00A5xqr3y0FhN1GKwIY3Tw'
+TOKEN = os.getenv("BOT_TOKEN")
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
 style_transfer_model = NeuralStyleTransfer()

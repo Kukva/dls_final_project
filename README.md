@@ -25,6 +25,10 @@ docker-compose up
 - Для работы модели требуется наличие **GPU**. Вы можете протестировать модель в **Google Colab** с использованием GPU.
 - Изображения сохраняются в локальной папке images
 
+## Дополнительные материалы
+
+- **Google Colab Notebook:** Для более детального изучения и тестирования модели, вы можете использовать Google Colab Notebook, доступный по адресу: [src/notebook/neural_style_transfer.ipynb](src/notebook/neural_style_transfer.ipynb).
+
 ## Демо
 Google Disk - https://drive.google.com/file/d/1I1FZaNy0j19c44IckE-qDjf2f8XJFpjC/view?usp=sharing  
 Yandex Disk - https://disk.yandex.ru/i/t8QUQHH7tzRmwA
